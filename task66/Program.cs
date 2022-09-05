@@ -25,38 +25,24 @@ void NaturalNumbers(int m, int n)
     else if (m < n)
         NaturalNumbers(m + 1, n);
 }
-
 NaturalNumbers(m, n);
 
-// int SumNaturalNumbers(int m, int n)
-// {
-//     int sum = DigitsSum(m);
-
-//     int DigitsSum(int number)
-//     {
-//         if (number < 10)
-//             return number;
-//         return number % 10 + DigitsSum(number / 10);
-//     }
-// }
 
 int SumNaturalNumbers(int m, int n)
 {
     if (m < n)
     {
-        Console.Write(m + " ");
-        sum = sum + m;
-        m++;
-        return SumNaturalNumbers(m, n);
+        Console.Write($"Сумма цифр = {SumNaturalNumbers(m, n)}");
+        return m;
+        return SumNaturalNumbers(m + 1, n);
     }
 else
     if (m > n)
     {
-        Console.Write(m - " ");
-        sum = sum + m;
-        m--;
-        return SumNaturalNumbers(m, n);
+        Console.Write($"Сумма цифр = {SumNaturalNumbers(m, n)}");
+        return m;
+        return SumNaturalNumbers(m - 1, n);
     }
+    return m;
 }
-
-SumNaturalNumbers(m, n);
+ int result = SumNaturalNumbers(m, n);
