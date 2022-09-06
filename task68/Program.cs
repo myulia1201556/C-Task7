@@ -21,7 +21,6 @@ else if (n < 0)
 }
 
 int functionAkkerman = Ack(m, n);
-
 Console.Write($"Функция Аккермана = {functionAkkerman} ");
 
 int Ack(int m, int n)
