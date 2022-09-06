@@ -11,38 +11,37 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите целое положительное число n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-void NaturalNumbers(int m, int n)
+int temp = m;
+
+if (m > n) 
 {
-    if (m == n)
-    {
-        Console.Write($"{m}");
-        return;
-    }
-    Console.Write($"{m}, ");
-
-    if (m > n)
-        NaturalNumbers(m - 1, n);
-    else if (m < n)
-        NaturalNumbers(m + 1, n);
+  m = n; 
+  n = temp;
 }
-NaturalNumbers(m, n);
 
+PrintSum(m, n, temp=0);
 
-int SumNaturalNumbers(int m, int n)
+void PrintSum(int m, int n, int sum)
 {
-    if (m < n)
-    {
-        Console.Write($"Сумма цифр = {SumNaturalNumbers(m, n)}");
-        return m;
-        return SumNaturalNumbers(m + 1, n);
-    }
-else
-    if (m > n)
-    {
-        Console.Write($"Сумма цифр = {SumNaturalNumbers(m, n)}");
-        return m;
-        return SumNaturalNumbers(m - 1, n);
-    }
-    return m;
+  sum = sum + n;
+  if (n <= m)
+  {
+    Console.Write($"Сумма элементов= {sum} ");
+    return;
+  }
+  PrintSum(m, n - 1, sum);
 }
- int result = SumNaturalNumbers(m, n);
+
+int InputNumbers(string input) 
+{
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
+}
+
+
+
+
+
+
+
